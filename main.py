@@ -29,12 +29,13 @@ def add_Account(account_no, name, address, phone_no, pan, type, balance):
     f_obj.close()
 
 
-def display_Transaction_History():
+def display_Transaction_History(account_no):
     f_obj = open('Ledger.csv', 'r')
     f_reader = csv.DictReader(f_obj)
     print("\n")
     for record in f_reader:
-        print(record)
+        if record['Account1'] == account_no or record['Account1'] == account_no:
+            print(record)
     f_obj.close()
 
 
@@ -112,7 +113,8 @@ def main():
             print('\nAccount added successfully')
 
         elif choice == 2:
-            display_Transaction_History()
+            account = input('Enter your account number : ')
+            display_Transaction_History(account)
 
         elif choice == 3:
             debit_account = input('\nEnter your Account number : ')
