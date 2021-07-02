@@ -9,7 +9,7 @@ import time
 # Schema of Student table
 col_name_Account = ['Account_no', 'Name', 'Address', 'Phone_no', 'PAN', 'A/C type', 'Balance']
 col_name_Ledger = ['Account1', 'Account2', 'Amount', 'D/C']
-if path.exists('B:\\IIT Madras\\mod1\\Accounts.csv') == False and path.exists('B:\\IIT Madras\\mod1\\Ledger.csv') == False:
+if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == False:
     f_ob = open('Accounts.csv', 'a+')
     f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Account)
     f_wr.writeheader()
